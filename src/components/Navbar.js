@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 // nav active
 const Navbar = ({ searchHandler, searchQuery, setSearchQuery, inputField }) => {
@@ -10,9 +10,11 @@ const Navbar = ({ searchHandler, searchQuery, setSearchQuery, inputField }) => {
 
   return (
     <div className="navbar flex justify-between items-center container mx-auto py-8 flex-col lg:flex-row gap-5 lg:gap-0">
-      <h2 className="logo text-2xl font-bold lowercase italic">
-        Food<span className="text-rose-500">Verse</span>
-      </h2>
+      <NavLink end to="/">
+        <h2 className="logo text-2xl font-bold lowercase italic">
+          Food<span className="text-rose-500">Verse</span>
+        </h2>
+      </NavLink>
 
       <form className="search-bar" onSubmit={searchHandler}>
         <input

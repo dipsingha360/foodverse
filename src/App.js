@@ -25,6 +25,7 @@ const App = () => {
     setSearchQuery("");
     inputField.current.blur();
     setRecipes([]);
+    setError("");
   };
 
   const getData = async (searchQuery) => {
