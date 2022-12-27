@@ -1,7 +1,13 @@
 import { Link, NavLink } from "react-router-dom";
 
 // nav active
-const Navbar = ({ searchHandler, searchQuery, setSearchQuery, inputField }) => {
+const Navbar = ({
+  searchHandler,
+  searchQuery,
+  setSearchQuery,
+  inputField,
+  savedItems,
+}) => {
   const navActive = ({ isActive }) => {
     return {
       color: isActive ? "#f43f5e" : null,
@@ -47,7 +53,9 @@ const Navbar = ({ searchHandler, searchQuery, setSearchQuery, inputField }) => {
             className="text-gray-400 hover:text-gray-600 duration-300"
           >
             Favourites{" "}
-            <span className="favourites-count font-bold text-sky-400">(0)</span>
+            <span className="favourites-count font-bold text-sky-400">
+              ({savedItems.length})
+            </span>
           </NavLink>
         </li>
       </ul>
